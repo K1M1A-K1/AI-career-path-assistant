@@ -1,0 +1,21 @@
+{
+  "role": "data_analyst",
+  "level": "junior",
+  "nodes": [
+    {"id": "excel", "label_fa": "اکسل", "label_en": "Excel", "layer": 0, "status": "known", "resources": []},
+    {"id": "statistics_basics", "label_fa": "آمار پایه", "label_en": "Statistics Basics", "layer": 0, "status": "todo", "resources": []},
+    {"id": "sql_basics", "label_fa": "مبانی SQL", "label_en": "SQL Basics", "layer": 0, "status": "todo",
+     "resources": [{"title": "SQLBolt - Learn SQL", "url": "https://sqlbolt.com/", "lang": "en", "type": "course", "verified": true}]},
+    {"id": "python_basics", "label_fa": "مبانی پایتون", "label_en": "Python Basics", "layer": 0, "status": "todo",
+     "resources": [{"title": "The Python Tutorial", "url": "https://docs.python.org/3/tutorial/", "lang": "en", "type": "docs", "verified": true}]},
+    {"id": "pandas", "label_fa": "پانداس", "label_en": "Pandas", "layer": 1, "status": "todo", "resources": []},
+    {"id": "data_visualization", "label_fa": "مصورسازی داده", "label_en": "Data Visualization", "layer": 2, "status": "todo", "resources": []}
+  ],
+  "edges": [
+    {"source": "python_basics", "target": "pandas"},
+    {"source": "pandas", "target": "data_visualization"},
+    {"source": "statistics_basics", "target": "data_visualization"}
+  ],
+  "order": ["excel", "statistics_basics", "sql_basics", "python_basics", "pandas", "data_visualization"],
+  "summary_fa": "برای رسیدن به تحلیلگر داده سطح مبتدی، ابتدا آمار، SQL و پایتون را یاد بگیرید، سپس پانداس و مصورسازی داده."
+}
