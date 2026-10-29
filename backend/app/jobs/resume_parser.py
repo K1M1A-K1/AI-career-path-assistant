@@ -82,6 +82,8 @@ def parse_resume(session_id: str, text: str) -> ResumeProfile:
     if not res.ok:
         raise P2Error(res.error.kind if res.error else "api")
     extraction = res.data
-    if extraction.years_experience is None:
-        raise P2Error("incomplete")
-    return ResumeProfile(**extraction.model_dump(), skill_ids=map_skills(extraction.skills, get_taxonomy()))
+    # The public contract uses zero when no years are stated; do not infer level from it.
+    values = extraction.model_dump()
+    if values["years_experience"] is None:
+        values["years_experience"] = 0
+    return ResumeProfile(**values, skill_ids=map_skills(extraction.skills, get_taxonomy()))

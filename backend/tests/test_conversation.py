@@ -1,4 +1,4 @@
-"""P2 tests with explicit mocked P1 boundaries when P1 is unavailable."""
+"""P2 behavior tests with isolated model responses and taxonomy fixtures."""
 from concurrent.futures import ThreadPoolExecutor
 
 import pytest
@@ -145,8 +145,6 @@ def test_endpoint_success_is_p2(p1_boundary, model, monkeypatch, caplog):
 
 
 def test_real_p1_graph_integration(monkeypatch, caplog):
-    if not hasattr(tax_module, "ancestors"):
-        pytest.skip("P1 branch unavailable: real graph integration remains required")
     from app.api import roadmap
     tax = tax_module.get_taxonomy()
     assert "recruiter" in tax.roles and "excel" in tax.concepts
@@ -166,13 +164,54 @@ def test_real_p1_graph_integration(monkeypatch, caplog):
     assert "STUB" not in caplog.text
 
 
-def test_p1_missing_does_not_publish_or_mutate(p1_boundary, model, monkeypatch):
-    monkeypatch.delattr(tax_module, "ancestors")
-    model.append(complete())
-    session = get_session("s")
-    result = conv.handle_message(session, "مبتدی هستم")
-    assert not result.done and "P1" in result.reply
-    assert session.profile is None and session.history == [] and session.draft == {}
+@pytest.mark.parametrize("levels,expected", [
+    ({}, ("junior", "junior")),
+    ({"target_level": "senior"}, ("senior", "junior")),
+    ({"current_level": "mid"}, ("junior", "mid")),
+])
+def test_question_cap_publishes_best_effort(p1_boundary, model, levels, expected):
+    session = get_session("cap")
+    for _ in range(6):
+        model.append({"target_role": "recruiter", **levels})
+        assert not conv.handle_message(session, "اطلاعاتی ندارم").done
+    model.append({})
+    result = conv.handle_message(session, "با همین اطلاعات شروع کنیم")
+    assert result.done and result.questions_asked == session.questions_asked == 6
+    assert (result.profile.target_level, result.profile.current_level) == expected
+    assert result.profile.known_concepts == []
+    assert "فرض شد" in result.reply and "junior" in result.reply
+    assert conv.handle_message(session, "ادامه").profile == result.profile
+
+
+def test_question_cap_without_role_offers_next_step(monkeypatch, model):
+    tax = tax_module.get_taxonomy()
+    session = get_session("role-cap")
+    session.questions_asked = 6
+    model.append({"target_role": "unsupported-role"})
+    result = conv.handle_message(session, "نقش دلخواه")
+    assert not result.done and result.profile is None and result.questions_asked == 6
+    assert "در پیام بعد نام ببرید" in result.reply
+    assert "unsupported-role" not in result.reply
+    names = [r.label_fa for _, r in sorted(tax.roles.items())[:4]]
+    assert len(names) == 4 and all(name in result.reply for name in names)
+    model.append({"target_role": "recruiter"})
+    continued = conv.handle_message(session, "کارشناس جذب")
+    assert continued.done and continued.questions_asked == 6
+
+
+def test_question_cap_drops_conflicting_known_claims(p1_boundary, model):
+    session = get_session("conflicting-cap")
+    session.questions_asked = 6
+    model.append({"target_role": "recruiter", "skills": [
+        skill("pivot_tables", "known", "پیوت بلدم"),
+        skill("excel", "unknown", "اکسل بلد نیستم"),
+        skill("python_basics", "known", "پایتون بلدم"),
+    ]})
+    result = conv.handle_message(session, "پیوت بلدم؛ اکسل بلد نیستم؛ پایتون بلدم")
+    assert result.done and result.questions_asked == 6
+    assert result.profile.known_concepts == ["python_basics"]
+    assert not conv._conflicts(session.draft)
+    assert "ناسازگار" in result.reply
 
 
 def test_explicit_target_level_required(p1_boundary, model):

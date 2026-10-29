@@ -49,7 +49,7 @@ def _context(draft: dict, tax) -> str:
                     ids.add(pre)
                     pending.append(pre)
     return json.dumps({
-        "roles": {k: {"fa": r.label_fa, "en": r.label_en, "aliases": getattr(r, "aliases", [])} for k, r in tax.roles.items()},
+        "roles": {k: {"fa": r.label_fa, "en": r.label_en, "aliases": r.aliases} for k, r in tax.roles.items()},
         "concepts": {k: {"fa": tax.concepts[k].label_fa, "en": tax.concepts[k].label_en,
                           "aliases": tax.concepts[k].aliases} for k in sorted(ids) if k in tax.concepts},
         "draft": draft,
@@ -72,9 +72,7 @@ def _merge(draft: dict, obs: Observation, message: str) -> dict:
     tax = tax_module.get_taxonomy()
     result = {**draft, "evidence": dict(draft.get("evidence", {}))}
     if obs.target_role:
-        finder = getattr(tax_module, "find_role", None)
-        role = finder(obs.target_role, tax) if finder else (obs.target_role if obs.target_role in tax.roles else None)
-        result["target_role"] = role
+        result["target_role"] = tax_module.find_role(obs.target_role, tax)
     for field in ("target_level", "current_level"):
         value = getattr(obs, field)
         if value is not None:
@@ -93,14 +91,10 @@ def _merge(draft: dict, obs: Observation, message: str) -> dict:
 
 
 def _conflicts(draft: dict) -> set[str]:
-    # Do not recreate P1 prerequisite inference when that dependency is unavailable.
-    ancestors = getattr(tax_module, "ancestors", None)
-    if ancestors is None:
-        raise P2Error("p1_unavailable")
     evidence = draft.get("evidence", {})
     known = [k for k, v in evidence.items() if v["status"] == "known"]
     denied = {k for k, v in evidence.items() if v["status"] != "known"}
-    return ancestors(tax_module.get_taxonomy().concepts, known) & denied
+    return tax_module.ancestors(tax_module.get_taxonomy().concepts, known) & denied
 
 
 def _profile(draft: dict) -> CareerProfile:
@@ -144,8 +138,30 @@ def handle_message(session: SessionState, message: str) -> ChatResponse:
         elif session.questions_asked < max(0, min(settings.max_questions, 6)):
             session.questions_asked += 1
             profile, reply = None, question
+        elif candidate.get("target_role") in tax_module.get_taxonomy().roles:
+            assumptions = []
+            for field, label in (("target_level", "هدف"), ("current_level", "فعلی")):
+                if not candidate.get(field):
+                    candidate[field] = "junior"
+                    assumptions.append(f"سطح {label} مشخص نبود؛ برای شروع junior (پایین‌ترین بازهٔ برنامه‌ریزی) فرض شد.")
+            if conflicts:
+                # Best effort must not publish a known closure contradicting explicit evidence.
+                # Reassess dependent claims without inventing new unknown-skill statements.
+                concepts = tax_module.get_taxonomy().concepts
+                evidence = candidate["evidence"]
+                denied = {cid for cid, item in evidence.items() if item["status"] != "known"}
+                candidate["evidence"] = {
+                    cid: item for cid, item in evidence.items()
+                    if item["status"] != "known" or not (tax_module.ancestors(concepts, [cid]) & denied)
+                }
+                assumptions.append("مهارت‌های عملی ناسازگار موقتاً از دانسته‌ها کنار گذاشته شدند.")
+            profile = _profile(candidate)
+            session.profile = profile
+            reply = "برنامهٔ اولیه با اطلاعات موجود و فقط مهارت‌های تأییدشده آماده شد. " + " ".join(assumptions)
         else:
-            profile, reply = None, "اطلاعات کافی یا سازگار برای ساخت پروفایل نداریم؛ مصاحبه در سقف تعداد سؤال پایان یافت."
+            names = [role.label_fa for _, role in sorted(tax_module.get_taxonomy().roles.items())[:4]]
+            profile = None
+            reply = "برای ادامه یکی از این نقش‌ها را در پیام بعد نام ببرید: " + "، ".join(names) + "."
         session.draft = candidate
         session.history.extend([{"role": "user", "content": message}, {"role": "assistant", "content": reply}])
         return response(reply, profile)
