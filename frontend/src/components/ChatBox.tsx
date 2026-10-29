@@ -53,7 +53,7 @@ export default function ChatBox({ messages, questionsAsked, done, busy, error, o
 
   const step = Math.min(questionsAsked, MAX_QUESTIONS);
   // only the newest assessment form stays interactive
-  const lastFormId = [...messages].reverse().find((m) => m.block?.type === "skill_assessment")?.id;
+  const lastFormId = done ? undefined : [...messages].reverse().find((m) => m.block?.type === "skill_assessment")?.id;
 
   return (
     <section dir="rtl" aria-label="گفتگو با دستیار مسیر شغلی" className="flex h-[640px] flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
