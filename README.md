@@ -41,3 +41,18 @@ Interactive docs: http://localhost:8000/docs
 FastAPI, Pydantic, openai SDK, networkx, PyYAML, PyMuPDF, python-docx, hazm, httpx, rank_bm25, numpy, scikit-learn, pytest, React, Vite, React Flow (@xyflow/react), Vazirmatn font.
 
 AI coding assistants (Claude Code) were used to build this project.
+
+## Frontend (P4)
+
+Vite + React 18 + TypeScript (strict) + Tailwind 3.4, zustand store, `@xyflow/react` + dagre graph. Persian RTL, Vazirmatn self-hosted.
+
+```bash
+cd frontend
+npm run dev          # http://localhost:5173, proxies /api to VITE_API_PROXY (default :8000)
+npm run typecheck && npm test && npm run lint:rtl && npm run build
+VITE_USE_FIXTURES=1 npm run dev   # demo-safety mode: serves backend/data/fixtures shapes, no backend needed
+npm run sync:taxonomy             # regenerate src/data/taxonomy.generated.json from backend/data/taxonomy/*.yaml
+```
+
+Optional: `VITE_SESSION_BUDGET_USD` shows a budget bar in the usage badge.
+The taxonomy JSON is committed because `docker compose` builds the image from `./frontend` only; re-run `sync:taxonomy` whenever the YAML changes.
