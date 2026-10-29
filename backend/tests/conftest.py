@@ -38,5 +38,3 @@ def p1_boundary(monkeypatch):
     # A fixed contract fixture, not a replacement production graph/closure implementation.
     monkeypatch.setattr(tax_module, "ancestors", lambda concepts, ids: set(ids) | ({"excel"} if "pivot_tables" in ids else set()), raising=False)
     return tax
-
-
