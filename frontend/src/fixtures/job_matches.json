@@ -1,0 +1,23 @@
+[
+  {
+    "posting": {"id":"fx-1","source":"fixture_a","title":"Junior Data Analyst","company":"Acme Analytics","location":"Tehran","remote":false,"seniority":"junior","requirements":["SQL","Excel","Statistics","Python"],"skill_ids":["sql_basics","excel","statistics_basics","python_basics"],"published_at":"2026-10-01","url":"https://example.com/jobs/fx-1"},
+    "score": 0.86,
+    "matched_skills": ["SQL", "Excel", "Python"],
+    "missing_skills": ["Statistics"],
+    "explanation_fa": "سه مهارت از چهار مهارت موردنیاز را دارید؛ فقط آمار پایه کم است."
+  },
+  {
+    "posting": {"id":"fx-5","source":"fixture_a","title":"Business Intelligence Intern","company":"Insight Lab","location":"Tehran","remote":false,"seniority":"junior","requirements":["Excel","Data visualization","SQL"],"skill_ids":["excel","data_visualization","sql_basics"],"published_at":"2026-10-09","url":"https://example.com/jobs/fx-5"},
+    "score": 0.71,
+    "matched_skills": ["Excel", "SQL"],
+    "missing_skills": ["Data visualization"],
+    "explanation_fa": "با اکسل و SQL مناسب این موقعیت هستید؛ مصورسازی داده را یاد بگیرید."
+  },
+  {
+    "posting": {"id":"fx-3","source":"fixture_b","title":"Data Analyst","company":"Data Co","location":"Remote","remote":true,"seniority":"mid","requirements":["SQL","Pandas","Data visualization","Statistics"],"skill_ids":["sql_basics","pandas","data_visualization","statistics_basics"],"published_at":"2026-10-05","url":"https://example.com/jobs/fx-3"},
+    "score": 0.52,
+    "matched_skills": ["SQL"],
+    "missing_skills": ["Pandas", "Data visualization", "Statistics"],
+    "explanation_fa": "فقط SQL را دارید و سه مهارت دیگر کم است."
+  }
+]

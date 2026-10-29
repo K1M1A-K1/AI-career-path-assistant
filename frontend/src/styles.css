@@ -1,28 +1,31 @@
-:root { --bg: #f6f7fb; --card: #fff; --ink: #1c2333; --muted: #667; --brand: #2f5be7; --ok: #1f9d55; --warn: #d9534f; }
-* { box-sizing: border-box; }
-body { margin: 0; font-family: "Vazirmatn", sans-serif; background: var(--bg); color: var(--ink); direction: rtl; }
-header { background: var(--card); border-bottom: 1px solid #e3e6ef; padding: 12px 24px; display: flex; gap: 24px; align-items: center; }
-header h1 { font-size: 18px; margin: 0; }
-nav button { font: inherit; border: 0; background: none; padding: 8px 14px; cursor: pointer; border-radius: 8px; }
-nav button.active { background: var(--brand); color: #fff; }
-main { max-width: 1100px; margin: 24px auto; padding: 0 16px; }
-.card { background: var(--card); border-radius: 12px; padding: 16px; box-shadow: 0 1px 3px #0001; margin-bottom: 16px; }
-.chat-log { height: 280px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
-.msg { padding: 8px 12px; border-radius: 12px; max-width: 80%; white-space: pre-wrap; }
-.msg.user { background: var(--brand); color: #fff; align-self: flex-start; }
-.msg.bot { background: #eef0f7; align-self: flex-end; }
-.row { display: flex; gap: 8px; }
-input, select { font: inherit; padding: 8px 10px; border: 1px solid #ccd; border-radius: 8px; }
-input[type="text"] { flex: 1; }
-.btn { font: inherit; background: var(--brand); color: #fff; border: 0; padding: 8px 16px; border-radius: 8px; cursor: pointer; }
-.btn:disabled { opacity: 0.5; cursor: default; }
-.graph { height: 460px; background: var(--card); border-radius: 12px; }
-.notice { background: #fff8e1; border: 1px solid #f0d58a; border-radius: 12px; padding: 12px 16px; margin-bottom: 16px; }
-.err { color: var(--warn); }
-.tag { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 12px; margin: 2px; }
-.tag.ok { background: #e0f4e8; color: var(--ok); }
-.tag.miss { background: #fdeaea; color: var(--warn); }
-.job h3 { margin: 0 0 4px; }
-.job .score { float: left; font-weight: 700; color: var(--brand); font-size: 20px; }
-.filters { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 12px; }
-.usage { color: var(--muted); font-size: 12px; text-align: center; margin: 16px 0; }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Vazirmatn", Tahoma, sans-serif;
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "ss01";
+  }
+  body { @apply bg-slate-50 text-slate-900 antialiased; margin: 0; }
+  /* NF-01: any letter-spacing disconnects Persian cursive glyphs (and breaks image export) */
+  *, [dir="rtl"], [dir="rtl"] * { letter-spacing: normal !important; }
+  button, input, select, textarea { font: inherit; }
+  :focus-visible { @apply outline-none ring-2 ring-blue-500 ring-offset-1; }
+}
+
+@layer components {
+  .card { @apply rounded-2xl border border-slate-200 bg-white p-4 shadow-sm; }
+  .btn { @apply inline-flex items-center justify-center gap-1.5 rounded-xl bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700 disabled:cursor-not-allowed disabled:bg-slate-300; }
+  .btn-ghost { @apply inline-flex items-center justify-center gap-1.5 rounded-xl border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-50; }
+  .chip { @apply inline-flex items-center rounded-full border px-3 py-1 text-xs font-medium transition-colors; }
+  .field { @apply rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-start; }
+}
+
+/* A-11: hide interactive controls from exported images without dropping links */
+[data-exporting="true"] .export-hide { display: none !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
