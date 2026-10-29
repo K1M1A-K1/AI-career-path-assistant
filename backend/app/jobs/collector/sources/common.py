@@ -13,7 +13,7 @@ CITIES = {
 
 _SENIOR = r"(ارشد|سنیور|senior|sr|لید|lead|مدیر|manager|head)"
 _MID = r"(میان ?رده|میان‌رده|mid|intermediate)"
-_JUNIOR = r"(کارآموز|کارامووز|جونیور|جونیر|junior|jr|intern|تازه ?کار)"
+_JUNIOR = r"(کارآموز|کارامووز|دستیار|جونیور|جونیر|junior|jr|intern|internship|assistant|تازه ?کار)"
 _NUM_WORDS = {"بدون": 0, "یک": 1, "دو": 2, "سه": 3, "چهار": 4, "پنج": 5, "شش": 6, "هفت": 7, "هشت": 8, "نه": 9, "ده": 10}
 _NEGATION = re.compile(r"(وجود ندارد|ندارد|نیست|ممکن نیست|not|no )")
 _REMOTE = re.compile(r"(دور ?کاری|remote)")

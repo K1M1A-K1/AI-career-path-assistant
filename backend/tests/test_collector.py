@@ -53,6 +53,9 @@ def test_common_helpers():
     assert not common.detect_remote("امکان دور کاری وجود ندارد.")
     assert common.detect_seniority("Senior Data Analyst") == "senior"
     assert common.detect_seniority("کارآموز تولید محتوا") == "junior"
+    assert common.detect_seniority("دستیار مدیر محصول") == "junior"  # assistant outranks مدیر
+    assert common.detect_seniority("Assistant Product Manager", years=7) == "junior"
+    assert common.detect_seniority("مدیر محصول") == "senior"
     assert common.detect_seniority("برنامه‌نویس", years=4) == "mid"
     assert common.detect_seniority("برنامه‌نویس") is None
     assert common.years_from_text("سه تا شش سال") == 3 and common.years_from_text("بدون سابقه") == 0
