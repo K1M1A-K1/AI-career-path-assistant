@@ -1,4 +1,322 @@
-# Format: concept (id), title, url, lang (fa|en), type (course|article|video|docs|book), verified (set by scripts/verify_resources.py)
-- {concept: python_basics, title: The Python Tutorial, url: "https://docs.python.org/3/tutorial/", lang: en, type: docs, verified: false}
-- {concept: sql_basics, title: SQLBolt - Learn SQL, url: "https://sqlbolt.com/", lang: en, type: course, verified: false}
-- {concept: http_basics, title: MDN - An overview of HTTP, url: "https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview", lang: en, type: docs, verified: false}
+# Format: concept (id), title, url, lang (fa|en), type (course|article|video|docs|book),
+# verified (set by `python -m scripts.verify_resources`; do not edit by hand)
+- {"concept": "python_basics", "title": "The Python Tutorial", "url": "https://docs.python.org/3/tutorial/", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "sql_basics", "title": "SQLBolt - Learn SQL", "url": "https://sqlbolt.com/", "lang": "en", "type": "course", "verified": true}
+- {"concept": "http_basics", "title": "MDN - An overview of HTTP", "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "ab_testing", "title": "Wikipedia: A/B testing", "url": "https://en.wikipedia.org/wiki/A/B_testing", "lang": "en", "type": "article", "verified": true}
+- {"concept": "accounting_basics", "title": "ویکی‌پدیا: اصول حسابداری", "url": "https://fa.wikipedia.org/wiki/%D8%AD%D8%B3%D8%A7%D8%A8%D8%AF%D8%A7%D8%B1%DB%8C", "lang": "fa", "type": "article", "verified": true}
+- {"concept": "accounting_basics", "title": "Khan Academy: Core finance", "url": "https://www.khanacademy.org/economics-finance-domain/core-finance", "lang": "en", "type": "course", "verified": true}
+- {"concept": "accounting_basics", "title": "Wikipedia: Accounting basics", "url": "https://en.wikipedia.org/wiki/Accounting", "lang": "en", "type": "article", "verified": true}
+- {"concept": "advanced_sql", "title": "PostgreSQL window functions tutorial", "url": "https://www.postgresql.org/docs/current/tutorial-window.html", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "advanced_sql", "title": "Wikipedia: Advanced SQL", "url": "https://en.wikipedia.org/wiki/Window_function_(SQL)", "lang": "en", "type": "article", "verified": true}
+- {"concept": "algorithms_data_structures", "title": "ویکی‌پدیا: الگوریتم و ساختمان داده", "url": "https://fa.wikipedia.org/wiki/%D8%B3%D8%A7%D8%AE%D8%AA%D8%A7%D8%B1_%D8%AF%D8%A7%D8%AF%D9%87", "lang": "fa", "type": "article", "verified": true}
+- {"concept": "algorithms_data_structures", "title": "roadmap.sh Data Structures and Algorithms", "url": "https://roadmap.sh/datastructures-and-algorithms", "lang": "en", "type": "article", "verified": true}
+- {"concept": "algorithms_data_structures", "title": "Wikipedia: Algorithms and data structures", "url": "https://en.wikipedia.org/wiki/Data_structure", "lang": "en", "type": "article", "verified": true}
+- {"concept": "analytics_strategy", "title": "Wikipedia: Analytics strategy", "url": "https://en.wikipedia.org/wiki/Analytics", "lang": "en", "type": "article", "verified": true}
+- {"concept": "async_concurrency", "title": "Wikipedia: Concurrency and async programming", "url": "https://en.wikipedia.org/wiki/Concurrent_computing", "lang": "en", "type": "article", "verified": true}
+- {"concept": "ats_tools", "title": "Wikipedia: Applicant tracking systems", "url": "https://en.wikipedia.org/wiki/Applicant_tracking_system", "lang": "en", "type": "article", "verified": true}
+- {"concept": "authentication_authorization", "title": "Introduction to JSON Web Tokens", "url": "https://jwt.io/introduction", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "authentication_authorization", "title": "Wikipedia: Authentication and authorization", "url": "https://en.wikipedia.org/wiki/Authentication", "lang": "en", "type": "article", "verified": true}
+- {"concept": "backend_framework", "title": "FastAPI tutorial", "url": "https://fastapi.tiangolo.com/tutorial/", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "backend_framework", "title": "Django tutorial", "url": "https://docs.djangoproject.com/en/stable/intro/tutorial01/", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "backend_framework", "title": "roadmap.sh Backend", "url": "https://roadmap.sh/backend", "lang": "en", "type": "article", "verified": true}
+- {"concept": "backend_framework", "title": "Wikipedia: Backend framework", "url": "https://en.wikipedia.org/wiki/Web_framework", "lang": "en", "type": "article", "verified": true}
+- {"concept": "bi_tools_basics", "title": "Power BI getting started", "url": "https://learn.microsoft.com/en-us/power-bi/fundamentals/desktop-getting-started", "lang": "en", "type": "course", "verified": true}
+- {"concept": "bi_tools_basics", "title": "Wikipedia: Business intelligence tools", "url": "https://en.wikipedia.org/wiki/Business_intelligence", "lang": "en", "type": "article", "verified": true}
+- {"concept": "big_data_processing", "title": "Spark quick start", "url": "https://spark.apache.org/docs/latest/quick-start.html", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "big_data_processing", "title": "Wikipedia: Big data processing", "url": "https://en.wikipedia.org/wiki/Apache_Spark", "lang": "en", "type": "article", "verified": true}
+- {"concept": "brand_strategy", "title": "Wikipedia: Brand strategy", "url": "https://en.wikipedia.org/wiki/Brand_management", "lang": "en", "type": "article", "verified": true}
+- {"concept": "budgeting_forecasting", "title": "Wikipedia: Budgeting and forecasting", "url": "https://en.wikipedia.org/wiki/Budget", "lang": "en", "type": "article", "verified": true}
+- {"concept": "business_communication", "title": "Wikipedia: Business communication", "url": "https://en.wikipedia.org/wiki/Business_communication", "lang": "en", "type": "article", "verified": true}
+- {"concept": "caching", "title": "Redis documentation", "url": "https://redis.io/docs/latest/", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "caching", "title": "Wikipedia: Caching", "url": "https://en.wikipedia.org/wiki/Cache_(computing)", "lang": "en", "type": "article", "verified": true}
+- {"concept": "calculus_basics", "title": "ویکی‌پدیا: مبانی حساب دیفرانسیل و انتگرال", "url": "https://fa.wikipedia.org/wiki/%D8%AD%D8%B3%D8%A7%D8%A8_%D8%AF%DB%8C%D9%81%D8%B1%D8%A7%D9%86%D8%B3%DB%8C%D9%84_%D9%88_%D8%A7%D9%86%D8%AA%DA%AF%D8%B1%D8%A7%D9%84", "lang": "fa", "type": "article", "verified": true}
+- {"concept": "calculus_basics", "title": "Khan Academy: Calculus 1", "url": "https://www.khanacademy.org/math/calculus-1", "lang": "en", "type": "course", "verified": true}
+- {"concept": "calculus_basics", "title": "Wikipedia: Calculus basics", "url": "https://en.wikipedia.org/wiki/Calculus", "lang": "en", "type": "article", "verified": true}
+- {"concept": "causal_inference", "title": "Wikipedia: Causal inference", "url": "https://en.wikipedia.org/wiki/Causal_inference", "lang": "en", "type": "article", "verified": true}
+- {"concept": "ci_cd", "title": "GitHub Actions overview", "url": "https://docs.github.com/en/actions/about-github-actions/understanding-github-actions", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "ci_cd", "title": "roadmap.sh DevOps", "url": "https://roadmap.sh/devops", "lang": "en", "type": "article", "verified": true}
+- {"concept": "ci_cd", "title": "Wikipedia: CI/CD", "url": "https://en.wikipedia.org/wiki/CI/CD", "lang": "en", "type": "article", "verified": true}
+- {"concept": "cloud_basics", "title": "ویکی‌پدیا: مبانی رایانش ابری", "url": "https://fa.wikipedia.org/wiki/%D8%B1%D8%A7%DB%8C%D8%A7%D9%86%D8%B4_%D8%A7%D8%A8%D8%B1%DB%8C", "lang": "fa", "type": "article", "verified": true}
+- {"concept": "cloud_basics", "title": "roadmap.sh AWS", "url": "https://roadmap.sh/aws", "lang": "en", "type": "article", "verified": true}
+- {"concept": "cloud_basics", "title": "Wikipedia: Cloud computing basics", "url": "https://en.wikipedia.org/wiki/Cloud_computing", "lang": "en", "type": "article", "verified": true}
+- {"concept": "code_review_mentoring", "title": "Wikipedia: Code review and mentoring", "url": "https://en.wikipedia.org/wiki/Code_review", "lang": "en", "type": "article", "verified": true}
+- {"concept": "command_line", "title": "Linux Journey", "url": "https://linuxjourney.com/", "lang": "en", "type": "course", "verified": false}
+- {"concept": "command_line", "title": "Wikipedia: Command line", "url": "https://en.wikipedia.org/wiki/Command-line_interface", "lang": "en", "type": "article", "verified": true}
+- {"concept": "computer_basics", "title": "Wikipedia: Computer fundamentals", "url": "https://en.wikipedia.org/wiki/Computer_literacy", "lang": "en", "type": "article", "verified": true}
+- {"concept": "computer_vision_basics", "title": "OpenCV tutorials", "url": "https://docs.opencv.org/4.x/d9/df8/tutorial_root.html", "lang": "en", "type": "docs", "verified": false}
+- {"concept": "computer_vision_basics", "title": "Wikipedia: Computer vision basics", "url": "https://en.wikipedia.org/wiki/Computer_vision", "lang": "en", "type": "article", "verified": true}
+- {"concept": "consuming_apis", "title": "MDN Fetch API", "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "consuming_apis", "title": "Wikipedia: Consuming APIs from the frontend", "url": "https://en.wikipedia.org/wiki/Web_API", "lang": "en", "type": "article", "verified": true}
+- {"concept": "content_marketing", "title": "ویکی‌پدیا: بازاریابی محتوا", "url": "https://fa.wikipedia.org/wiki/%D8%A8%D8%A7%D8%B2%D8%A7%D8%B1%DB%8C%D8%A7%D8%A8%DB%8C_%D9%85%D8%AD%D8%AA%D9%88%D8%A7%DB%8C%DB%8C", "lang": "fa", "type": "article", "verified": true}
+- {"concept": "content_marketing", "title": "HubSpot Academy: Content marketing", "url": "https://academy.hubspot.com/courses/content-marketing", "lang": "en", "type": "course", "verified": true}
+- {"concept": "content_marketing", "title": "Wikipedia: Content marketing", "url": "https://en.wikipedia.org/wiki/Content_marketing", "lang": "en", "type": "article", "verified": true}
+- {"concept": "conversion_optimization", "title": "HubSpot Academy", "url": "https://academy.hubspot.com/", "lang": "en", "type": "course", "verified": true}
+- {"concept": "conversion_optimization", "title": "Wikipedia: Conversion rate optimization", "url": "https://en.wikipedia.org/wiki/Conversion_rate_optimization", "lang": "en", "type": "article", "verified": true}
+- {"concept": "corporate_finance", "title": "Wikipedia: Corporate finance", "url": "https://en.wikipedia.org/wiki/Corporate_finance", "lang": "en", "type": "article", "verified": true}
+- {"concept": "cost_optimization_cloud", "title": "FinOps Foundation: What is FinOps", "url": "https://www.finops.org/introduction/what-is-finops/", "lang": "en", "type": "article", "verified": true}
+- {"concept": "cost_optimization_cloud", "title": "Wikipedia: Cloud cost optimization", "url": "https://en.wikipedia.org/wiki/FinOps", "lang": "en", "type": "article", "verified": false}
+- {"concept": "cost_optimization_cloud", "title": "Wikipedia: Cloud cost optimization", "url": "https://en.wikipedia.org/wiki/Cloud_computing", "lang": "en", "type": "article", "verified": true}
+- {"concept": "dashboard_design", "title": "Wikipedia: Dashboard design", "url": "https://en.wikipedia.org/wiki/Dashboard_(business)", "lang": "en", "type": "article", "verified": true}
+- {"concept": "data_cleaning", "title": "pandas: working with missing data", "url": "https://pandas.pydata.org/docs/user_guide/missing_data.html", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "data_cleaning", "title": "Wikipedia: Data cleaning", "url": "https://en.wikipedia.org/wiki/Data_cleansing", "lang": "en", "type": "article", "verified": true}
+- {"concept": "data_modeling", "title": "roadmap.sh PostgreSQL DBA", "url": "https://roadmap.sh/postgresql-dba", "lang": "en", "type": "article", "verified": true}
+- {"concept": "data_modeling", "title": "Wikipedia: Data modeling", "url": "https://en.wikipedia.org/wiki/Data_modeling", "lang": "en", "type": "article", "verified": true}
+- {"concept": "data_quality_governance", "title": "Wikipedia: Data quality and governance", "url": "https://en.wikipedia.org/wiki/Data_governance", "lang": "en", "type": "article", "verified": true}
+- {"concept": "data_storytelling", "title": "Wikipedia: Data storytelling", "url": "https://en.wikipedia.org/wiki/Storytelling", "lang": "en", "type": "article", "verified": true}
+- {"concept": "data_visualization", "title": "ویکی‌پدیا: مصورسازی داده", "url": "https://fa.wikipedia.org/wiki/%D9%85%D8%B5%D9%88%D8%B1%D8%B3%D8%A7%D8%B2%DB%8C_%D8%AF%D8%A7%D8%AF%D9%87%E2%80%8C%D9%87%D8%A7", "lang": "fa", "type": "article", "verified": false}
+- {"concept": "data_visualization", "title": "Matplotlib tutorials", "url": "https://matplotlib.org/stable/tutorials/index.html", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "data_visualization", "title": "roadmap.sh Data Analyst", "url": "https://roadmap.sh/data-analyst", "lang": "en", "type": "article", "verified": true}
+- {"concept": "data_visualization", "title": "Wikipedia: Data visualization", "url": "https://en.wikipedia.org/wiki/Data_visualization", "lang": "en", "type": "article", "verified": true}
+- {"concept": "data_warehousing", "title": "BigQuery introduction", "url": "https://cloud.google.com/bigquery/docs/introduction", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "data_warehousing", "title": "Wikipedia: Data warehousing", "url": "https://en.wikipedia.org/wiki/Data_warehouse", "lang": "en", "type": "article", "verified": true}
+- {"concept": "db_indexing_transactions", "title": "Wikipedia: Database indexing and transactions", "url": "https://en.wikipedia.org/wiki/Database_transaction", "lang": "en", "type": "article", "verified": true}
+- {"concept": "deep_learning_basics", "title": "ویکی‌پدیا: مبانی یادگیری عمیق", "url": "https://fa.wikipedia.org/wiki/%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C_%DA%98%D8%B1%D9%81", "lang": "fa", "type": "article", "verified": true}
+- {"concept": "deep_learning_basics", "title": "PyTorch basics tutorial", "url": "https://pytorch.org/tutorials/beginner/basics/intro.html", "lang": "en", "type": "course", "verified": false}
+- {"concept": "deep_learning_basics", "title": "Kaggle Learn: Intro to Deep Learning", "url": "https://www.kaggle.com/learn/intro-to-deep-learning", "lang": "en", "type": "course", "verified": true}
+- {"concept": "deep_learning_basics", "title": "Wikipedia: Deep learning basics", "url": "https://en.wikipedia.org/wiki/Deep_learning", "lang": "en", "type": "article", "verified": true}
+- {"concept": "statistics_basics", "title": "ویکی‌پدیا: آمار توصیفی", "url": "https://fa.wikipedia.org/wiki/%D8%A2%D9%85%D8%A7%D8%B1_%D8%AA%D9%88%D8%B5%DB%8C%D9%81%DB%8C", "lang": "fa", "type": "article", "verified": true}
+- {"concept": "statistics_basics", "title": "Khan Academy: Statistics and probability", "url": "https://www.khanacademy.org/math/statistics-probability", "lang": "en", "type": "course", "verified": true}
+- {"concept": "statistics_basics", "title": "Wikipedia: Descriptive statistics", "url": "https://en.wikipedia.org/wiki/Descriptive_statistics", "lang": "en", "type": "article", "verified": true}
+- {"concept": "design_patterns", "title": "Refactoring Guru: Design patterns", "url": "https://refactoring.guru/design-patterns", "lang": "en", "type": "article", "verified": true}
+- {"concept": "design_patterns", "title": "Wikipedia: Design patterns", "url": "https://en.wikipedia.org/wiki/Software_design_pattern", "lang": "en", "type": "article", "verified": true}
+- {"concept": "devops_security", "title": "Wikipedia: DevSecOps", "url": "https://en.wikipedia.org/wiki/DevOps", "lang": "en", "type": "article", "verified": true}
+- {"concept": "digital_marketing_basics", "title": "ویکی‌پدیا: مبانی بازاریابی دیجیتال", "url": "https://fa.wikipedia.org/wiki/%D8%A8%D8%A7%D8%B2%D8%A7%D8%B1%DB%8C%D8%A7%D8%A8%DB%8C_%D8%AF%DB%8C%D8%AC%DB%8C%D8%AA%D8%A7%D9%84", "lang": "fa", "type": "article", "verified": true}
+- {"concept": "digital_marketing_basics", "title": "Google Digital Garage", "url": "https://learndigital.withgoogle.com/digitalgarage", "lang": "en", "type": "course", "verified": true}
+- {"concept": "digital_marketing_basics", "title": "Wikipedia: Digital marketing basics", "url": "https://en.wikipedia.org/wiki/Digital_marketing", "lang": "en", "type": "article", "verified": true}
+- {"concept": "distributed_systems", "title": "Wikipedia: Distributed systems", "url": "https://en.wikipedia.org/wiki/Distributed_computing", "lang": "en", "type": "article", "verified": true}
+- {"concept": "docker_basics", "title": "ویکی‌پدیا: مبانی Docker", "url": "https://fa.wikipedia.org/wiki/%D8%AF%D8%A7%DA%A9%D8%B1", "lang": "fa", "type": "article", "verified": true}
+- {"concept": "docker_basics", "title": "Docker get started", "url": "https://docs.docker.com/get-started/", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "docker_basics", "title": "Wikipedia: Docker and containers", "url": "https://en.wikipedia.org/wiki/Docker_(software)", "lang": "en", "type": "article", "verified": true}
+- {"concept": "email_marketing", "title": "HubSpot Academy: Email marketing", "url": "https://academy.hubspot.com/courses/email-marketing", "lang": "en", "type": "course", "verified": true}
+- {"concept": "email_marketing", "title": "Wikipedia: Email marketing", "url": "https://en.wikipedia.org/wiki/Email_marketing", "lang": "en", "type": "article", "verified": true}
+- {"concept": "employer_branding", "title": "Wikipedia: Employer branding", "url": "https://en.wikipedia.org/wiki/Employer_branding", "lang": "en", "type": "article", "verified": true}
+- {"concept": "ensemble_methods", "title": "scikit-learn: ensemble methods", "url": "https://scikit-learn.org/stable/modules/ensemble.html", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "ensemble_methods", "title": "Wikipedia: Ensemble methods", "url": "https://en.wikipedia.org/wiki/Ensemble_learning", "lang": "en", "type": "article", "verified": true}
+- {"concept": "etl_basics", "title": "roadmap.sh Data Analyst", "url": "https://roadmap.sh/data-analyst", "lang": "en", "type": "article", "verified": true}
+- {"concept": "etl_basics", "title": "Wikipedia: ETL and data pipelines", "url": "https://en.wikipedia.org/wiki/Extract,_transform,_load", "lang": "en", "type": "article", "verified": true}
+- {"concept": "exploratory_data_analysis", "title": "Kaggle Learn: Pandas", "url": "https://www.kaggle.com/learn/pandas", "lang": "en", "type": "course", "verified": true}
+- {"concept": "exploratory_data_analysis", "title": "Wikipedia: Exploratory data analysis", "url": "https://en.wikipedia.org/wiki/Exploratory_data_analysis", "lang": "en", "type": "article", "verified": true}
+- {"concept": "feature_engineering", "title": "Kaggle Learn: Feature Engineering", "url": "https://www.kaggle.com/learn/feature-engineering", "lang": "en", "type": "course", "verified": true}
+- {"concept": "feature_engineering", "title": "Wikipedia: Feature engineering", "url": "https://en.wikipedia.org/wiki/Feature_engineering", "lang": "en", "type": "article", "verified": true}
+- {"concept": "financial_modeling", "title": "CFI: Financial modeling guide", "url": "https://corporatefinanceinstitute.com/resources/financial-modeling/what-is-financial-modeling/", "lang": "en", "type": "article", "verified": true}
+- {"concept": "financial_modeling", "title": "Wikipedia: Financial modeling", "url": "https://en.wikipedia.org/wiki/Financial_modeling", "lang": "en", "type": "article", "verified": true}
+- {"concept": "financial_reporting_standards", "title": "IFRS Foundation", "url": "https://www.ifrs.org/", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "financial_reporting_standards", "title": "Wikipedia: Financial reporting standards", "url": "https://en.wikipedia.org/wiki/International_Financial_Reporting_Standards", "lang": "en", "type": "article", "verified": true}
+- {"concept": "financial_statements", "title": "ویکی‌پدیا: صورت‌های مالی", "url": "https://fa.wikipedia.org/wiki/%D8%B5%D9%88%D8%B1%D8%AA%E2%80%8C%D9%87%D8%A7%DB%8C_%D9%85%D8%A7%D9%84%DB%8C", "lang": "fa", "type": "article", "verified": false}
+- {"concept": "financial_statements", "title": "CFI: Financial statements", "url": "https://corporatefinanceinstitute.com/resources/accounting/financial-statements/", "lang": "en", "type": "article", "verified": true}
+- {"concept": "financial_statements", "title": "Wikipedia: Financial statements", "url": "https://en.wikipedia.org/wiki/Financial_statement", "lang": "en", "type": "article", "verified": true}
+- {"concept": "frontend_architecture", "title": "Wikipedia: Frontend architecture", "url": "https://en.wikipedia.org/wiki/Front-end_web_development", "lang": "en", "type": "article", "verified": true}
+- {"concept": "frontend_framework", "title": "React: Learn", "url": "https://react.dev/learn", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "frontend_framework", "title": "roadmap.sh Frontend", "url": "https://roadmap.sh/frontend", "lang": "en", "type": "article", "verified": true}
+- {"concept": "frontend_framework", "title": "Wikipedia: Frontend framework", "url": "https://en.wikipedia.org/wiki/React_(software)", "lang": "en", "type": "article", "verified": true}
+- {"concept": "frontend_testing", "title": "Playwright docs", "url": "https://playwright.dev/docs/intro", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "frontend_testing", "title": "Testing Library intro", "url": "https://testing-library.com/docs/", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "frontend_testing", "title": "Wikipedia: Frontend testing", "url": "https://en.wikipedia.org/wiki/Test_automation", "lang": "en", "type": "article", "verified": true}
+- {"concept": "git_basics", "title": "ویکی‌پدیا: مبانی Git", "url": "https://fa.wikipedia.org/wiki/%DA%AF%DB%8C%D8%AA", "lang": "fa", "type": "article", "verified": true}
+- {"concept": "git_basics", "title": "Pro Git book", "url": "https://git-scm.com/book/en/v2", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "git_basics", "title": "Wikipedia: Git version control", "url": "https://en.wikipedia.org/wiki/Git", "lang": "en", "type": "article", "verified": true}
+- {"concept": "git_workflows", "title": "GitHub flow", "url": "https://docs.github.com/en/get-started/using-github/github-flow", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "git_workflows", "title": "Wikipedia: Git workflows", "url": "https://en.wikipedia.org/wiki/Version_control", "lang": "en", "type": "article", "verified": true}
+- {"concept": "go_to_market", "title": "Wikipedia: Go-to-market", "url": "https://en.wikipedia.org/wiki/Go-to-market_strategy", "lang": "en", "type": "article", "verified": true}
+- {"concept": "growth_marketing", "title": "Wikipedia: Growth marketing", "url": "https://en.wikipedia.org/wiki/Growth_hacking", "lang": "en", "type": "article", "verified": true}
+- {"concept": "hr_fundamentals", "title": "ویکی‌پدیا: مبانی منابع انسانی", "url": "https://fa.wikipedia.org/wiki/%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA_%D9%85%D9%86%D8%A7%D8%A8%D8%B9_%D8%A7%D9%86%D8%B3%D8%A7%D9%86%DB%8C", "lang": "fa", "type": "article", "verified": true}
+- {"concept": "hr_fundamentals", "title": "SHRM", "url": "https://www.shrm.org/", "lang": "en", "type": "article", "verified": true}
+- {"concept": "hr_fundamentals", "title": "Wikipedia: HR fundamentals", "url": "https://en.wikipedia.org/wiki/Human_resource_management", "lang": "en", "type": "article", "verified": true}
+- {"concept": "html_css", "title": "ویکی‌پدیا: HTML و CSS", "url": "https://fa.wikipedia.org/wiki/%D8%A7%DA%86%E2%80%8C%D8%AA%DB%8C%E2%80%8C%D8%A7%D9%85%E2%80%8C%D8%A7%D9%84", "lang": "fa", "type": "article", "verified": true}
+- {"concept": "html_css", "title": "MDN Learn web development", "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development", "lang": "en", "type": "course", "verified": true}
+- {"concept": "html_css", "title": "Wikipedia: HTML and CSS", "url": "https://en.wikipedia.org/wiki/HTML", "lang": "en", "type": "article", "verified": true}
+- {"concept": "http_basics", "title": "ویکی‌پدیا: مبانی HTTP و وب", "url": "https://fa.wikipedia.org/wiki/%D8%A7%DA%86%E2%80%8C%D8%AA%DB%8C%E2%80%8C%D8%AA%DB%8C%E2%80%8C%D9%BE%DB%8C", "lang": "fa", "type": "article", "verified": true}
+- {"concept": "http_basics", "title": "MDN HTTP overview", "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "http_basics", "title": "Wikipedia: HTTP and web basics", "url": "https://en.wikipedia.org/wiki/HTTP", "lang": "en", "type": "article", "verified": true}
+- {"concept": "inferential_statistics", "title": "Khan Academy: Significance tests", "url": "https://www.khanacademy.org/math/statistics-probability/significance-tests-one-sample", "lang": "en", "type": "course", "verified": true}
+- {"concept": "inferential_statistics", "title": "Wikipedia: Inferential statistics", "url": "https://en.wikipedia.org/wiki/Statistical_inference", "lang": "en", "type": "article", "verified": true}
+- {"concept": "infrastructure_as_code", "title": "Terraform tutorials", "url": "https://developer.hashicorp.com/terraform/tutorials", "lang": "en", "type": "course", "verified": true}
+- {"concept": "infrastructure_as_code", "title": "Wikipedia: Infrastructure as code", "url": "https://en.wikipedia.org/wiki/Infrastructure_as_code", "lang": "en", "type": "article", "verified": true}
+- {"concept": "interviewing_techniques", "title": "Wikipedia: Interviewing techniques", "url": "https://en.wikipedia.org/wiki/Job_interview", "lang": "en", "type": "article", "verified": true}
+- {"concept": "javascript_basics", "title": "ویکی‌پدیا: مبانی جاوااسکریپت", "url": "https://fa.wikipedia.org/wiki/%D8%AC%D8%A7%D9%88%D8%A7%D8%A7%D8%B3%DA%A9%D8%B1%DB%8C%D9%BE%D8%AA", "lang": "fa", "type": "article", "verified": true}
+- {"concept": "javascript_basics", "title": "The Modern JavaScript Tutorial", "url": "https://javascript.info/", "lang": "en", "type": "course", "verified": true}
+- {"concept": "javascript_basics", "title": "Wikipedia: JavaScript basics", "url": "https://en.wikipedia.org/wiki/JavaScript", "lang": "en", "type": "article", "verified": true}
+- {"concept": "job_analysis_description", "title": "Wikipedia: Job analysis and job descriptions", "url": "https://en.wikipedia.org/wiki/Job_description", "lang": "en", "type": "article", "verified": true}
+- {"concept": "keyword_research", "title": "Ahrefs: Keyword research guide", "url": "https://ahrefs.com/blog/keyword-research/", "lang": "en", "type": "article", "verified": true}
+- {"concept": "keyword_research", "title": "Wikipedia: Keyword research", "url": "https://en.wikipedia.org/wiki/Keyword_research", "lang": "en", "type": "article", "verified": true}
+- {"concept": "kpi_metrics", "title": "Wikipedia: KPIs and metrics", "url": "https://en.wikipedia.org/wiki/Performance_indicator", "lang": "en", "type": "article", "verified": true}
+- {"concept": "kubernetes_basics", "title": "ویکی‌پدیا: مبانی Kubernetes", "url": "https://fa.wikipedia.org/wiki/%DA%A9%D9%88%D8%A8%D8%B1%D9%86%D8%AA%DB%8C%D8%B3", "lang": "fa", "type": "article", "verified": false}
+- {"concept": "kubernetes_basics", "title": "Kubernetes basics tutorial", "url": "https://kubernetes.io/docs/tutorials/kubernetes-basics/", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "kubernetes_basics", "title": "Wikipedia: Kubernetes basics", "url": "https://en.wikipedia.org/wiki/Kubernetes", "lang": "en", "type": "article", "verified": true}
+- {"concept": "labor_law_basics", "title": "Wikipedia: Labor law basics", "url": "https://en.wikipedia.org/wiki/Labour_law", "lang": "en", "type": "article", "verified": true}
+- {"concept": "leadership_people_management", "title": "ویکی‌پدیا: رهبری و مدیریت تیم", "url": "https://fa.wikipedia.org/wiki/%D8%B1%D9%87%D8%A8%D8%B1%DB%8C", "lang": "fa", "type": "article", "verified": true}
+- {"concept": "leadership_people_management", "title": "Wikipedia: Leadership and people management", "url": "https://en.wikipedia.org/wiki/Leadership", "lang": "en", "type": "article", "verified": true}
+- {"concept": "linear_algebra", "title": "ویکی‌پدیا: جبر خطی", "url": "https://fa.wikipedia.org/wiki/%D8%AC%D8%A8%D8%B1_%D8%AE%D8%B7%DB%8C", "lang": "fa", "type": "article", "verified": true}
+- {"concept": "linear_algebra", "title": "Khan Academy: Linear algebra", "url": "https://www.khanacademy.org/math/linear-algebra", "lang": "en", "type": "course", "verified": true}
+- {"concept": "linear_algebra", "title": "Wikipedia: Linear algebra", "url": "https://en.wikipedia.org/wiki/Linear_algebra", "lang": "en", "type": "article", "verified": true}
+- {"concept": "link_building", "title": "Moz: Link building", "url": "https://moz.com/learn/seo/link-building", "lang": "en", "type": "article", "verified": false}
+- {"concept": "link_building", "title": "Wikipedia: Link building", "url": "https://en.wikipedia.org/wiki/Link_building", "lang": "en", "type": "article", "verified": true}
+- {"concept": "linux_administration", "title": "Wikipedia: Linux administration", "url": "https://en.wikipedia.org/wiki/System_administrator", "lang": "en", "type": "article", "verified": true}
+- {"concept": "linux_basics", "title": "ویکی‌پدیا: مبانی لینوکس", "url": "https://fa.wikipedia.org/wiki/%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3", "lang": "fa", "type": "article", "verified": true}
+- {"concept": "linux_basics", "title": "Linux Journey", "url": "https://linuxjourney.com/", "lang": "en", "type": "course", "verified": false}
+- {"concept": "linux_basics", "title": "roadmap.sh Linux", "url": "https://roadmap.sh/linux", "lang": "en", "type": "article", "verified": true}
+- {"concept": "linux_basics", "title": "Wikipedia: Linux fundamentals", "url": "https://en.wikipedia.org/wiki/Linux", "lang": "en", "type": "article", "verified": true}
+- {"concept": "llm_applications", "title": "Prompt Engineering Guide", "url": "https://www.promptingguide.ai/", "lang": "en", "type": "article", "verified": true}
+- {"concept": "llm_applications", "title": "roadmap.sh Prompt Engineering", "url": "https://roadmap.sh/prompt-engineering", "lang": "en", "type": "article", "verified": true}
+- {"concept": "llm_applications", "title": "Wikipedia: LLM applications", "url": "https://en.wikipedia.org/wiki/Large_language_model", "lang": "en", "type": "article", "verified": true}
+- {"concept": "market_research", "title": "ویکی‌پدیا: تحقیق بازار", "url": "https://fa.wikipedia.org/wiki/%D8%AA%D8%AD%D9%82%DB%8C%D9%82%D8%A7%D8%AA_%D8%A8%D8%A7%D8%B2%D8%A7%D8%B1", "lang": "fa", "type": "article", "verified": false}
+- {"concept": "market_research", "title": "Wikipedia: Market research", "url": "https://en.wikipedia.org/wiki/Market_research", "lang": "en", "type": "article", "verified": true}
+- {"concept": "marketing_automation_crm", "title": "HubSpot Academy", "url": "https://academy.hubspot.com/", "lang": "en", "type": "course", "verified": true}
+- {"concept": "marketing_automation_crm", "title": "Wikipedia: Marketing automation and CRM", "url": "https://en.wikipedia.org/wiki/Marketing_automation", "lang": "en", "type": "article", "verified": true}
+- {"concept": "marketing_fundamentals", "title": "ویکی‌پدیا: مبانی بازاریابی", "url": "https://fa.wikipedia.org/wiki/%D8%A8%D8%A7%D8%B2%D8%A7%D8%B1%DB%8C%D8%A7%D8%A8%DB%8C", "lang": "fa", "type": "article", "verified": true}
+- {"concept": "marketing_fundamentals", "title": "HubSpot Academy", "url": "https://academy.hubspot.com/", "lang": "en", "type": "course", "verified": true}
+- {"concept": "marketing_fundamentals", "title": "Wikipedia: Marketing fundamentals", "url": "https://en.wikipedia.org/wiki/Marketing", "lang": "en", "type": "article", "verified": true}
+- {"concept": "marketing_roi_attribution", "title": "Wikipedia: Marketing ROI and attribution", "url": "https://en.wikipedia.org/wiki/Return_on_marketing_investment", "lang": "en", "type": "article", "verified": true}
+- {"concept": "marketing_strategy", "title": "Wikipedia: Marketing strategy", "url": "https://en.wikipedia.org/wiki/Marketing_strategy", "lang": "en", "type": "article", "verified": true}
+- {"concept": "math_foundations", "title": "Khan Academy: Math", "url": "https://www.khanacademy.org/math", "lang": "en", "type": "course", "verified": true}
+- {"concept": "math_foundations", "title": "Wikipedia: Math foundations", "url": "https://en.wikipedia.org/wiki/Mathematics", "lang": "en", "type": "article", "verified": true}
+- {"concept": "message_queues", "title": "RabbitMQ tutorials", "url": "https://www.rabbitmq.com/tutorials", "lang": "en", "type": "course", "verified": true}
+- {"concept": "message_queues", "title": "Wikipedia: Message queues", "url": "https://en.wikipedia.org/wiki/Message_queue", "lang": "en", "type": "article", "verified": true}
+- {"concept": "microservices", "title": "Wikipedia: Microservices", "url": "https://en.wikipedia.org/wiki/Microservices", "lang": "en", "type": "article", "verified": true}
+- {"concept": "ml_fundamentals", "title": "ویکی‌پدیا: مبانی یادگیری ماشین", "url": "https://fa.wikipedia.org/wiki/%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C_%D9%85%D8%A7%D8%B4%DB%8C%D9%86", "lang": "fa", "type": "article", "verified": true}
+- {"concept": "ml_fundamentals", "title": "Google ML Crash Course", "url": "https://developers.google.com/machine-learning/crash-course", "lang": "en", "type": "course", "verified": true}
+- {"concept": "ml_fundamentals", "title": "scikit-learn user guide", "url": "https://scikit-learn.org/stable/user_guide.html", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "ml_fundamentals", "title": "Kaggle Learn: Intro to Machine Learning", "url": "https://www.kaggle.com/learn/intro-to-machine-learning", "lang": "en", "type": "course", "verified": true}
+- {"concept": "ml_fundamentals", "title": "Wikipedia: Machine learning fundamentals", "url": "https://en.wikipedia.org/wiki/Machine_learning", "lang": "en", "type": "article", "verified": true}
+- {"concept": "mlops_basics", "title": "MLflow documentation", "url": "https://mlflow.org/docs/latest/", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "mlops_basics", "title": "roadmap.sh MLOps", "url": "https://roadmap.sh/mlops", "lang": "en", "type": "article", "verified": true}
+- {"concept": "mlops_basics", "title": "Wikipedia: MLOps basics", "url": "https://en.wikipedia.org/wiki/MLOps", "lang": "en", "type": "article", "verified": true}
+- {"concept": "model_deployment", "title": "FastAPI tutorial", "url": "https://fastapi.tiangolo.com/tutorial/", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "model_deployment", "title": "Wikipedia: Model deployment", "url": "https://en.wikipedia.org/wiki/MLOps", "lang": "en", "type": "article", "verified": true}
+- {"concept": "model_evaluation", "title": "scikit-learn: model evaluation", "url": "https://scikit-learn.org/stable/modules/model_evaluation.html", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "model_evaluation", "title": "Wikipedia: Model evaluation", "url": "https://en.wikipedia.org/wiki/Evaluation_of_binary_classifiers", "lang": "en", "type": "article", "verified": true}
+- {"concept": "monitoring_observability", "title": "Prometheus overview", "url": "https://prometheus.io/docs/introduction/overview/", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "monitoring_observability", "title": "Wikipedia: Monitoring and observability", "url": "https://en.wikipedia.org/wiki/Observability_(software)", "lang": "en", "type": "article", "verified": true}
+- {"concept": "negotiation", "title": "ویکی‌پدیا: مذاکره", "url": "https://fa.wikipedia.org/wiki/%D9%85%D8%B0%D8%A7%DA%A9%D8%B1%D9%87", "lang": "fa", "type": "article", "verified": true}
+- {"concept": "negotiation", "title": "Wikipedia: Negotiation", "url": "https://en.wikipedia.org/wiki/Negotiation", "lang": "en", "type": "article", "verified": true}
+- {"concept": "networking_basics", "title": "ویکی‌پدیا: مبانی شبکه", "url": "https://fa.wikipedia.org/wiki/%D8%B4%D8%A8%DA%A9%D9%87_%D8%B1%D8%A7%DB%8C%D8%A7%D9%86%D9%87%E2%80%8C%D8%A7%DB%8C", "lang": "fa", "type": "article", "verified": true}
+- {"concept": "networking_basics", "title": "Khan Academy: The Internet", "url": "https://www.khanacademy.org/computing/computers-and-internet/xcae6f4a7ff015e7d:the-internet", "lang": "en", "type": "course", "verified": true}
+- {"concept": "networking_basics", "title": "Wikipedia: Networking fundamentals", "url": "https://en.wikipedia.org/wiki/Computer_network", "lang": "en", "type": "article", "verified": true}
+- {"concept": "nlp_basics", "title": "ویکی‌پدیا: پردازش زبان طبیعی", "url": "https://fa.wikipedia.org/wiki/%D9%BE%D8%B1%D8%AF%D8%A7%D8%B2%D8%B4_%D8%B2%D8%A8%D8%A7%D9%86_%D8%B7%D8%A8%DB%8C%D8%B9%DB%8C", "lang": "fa", "type": "article", "verified": true}
+- {"concept": "nlp_basics", "title": "Hugging Face NLP course", "url": "https://huggingface.co/learn/nlp-course", "lang": "en", "type": "course", "verified": true}
+- {"concept": "nlp_basics", "title": "Wikipedia: Natural language processing", "url": "https://en.wikipedia.org/wiki/Natural_language_processing", "lang": "en", "type": "article", "verified": true}
+- {"concept": "nosql_databases", "title": "MongoDB manual introduction", "url": "https://www.mongodb.com/docs/manual/introduction/", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "nosql_databases", "title": "Wikipedia: NoSQL databases", "url": "https://en.wikipedia.org/wiki/NoSQL", "lang": "en", "type": "article", "verified": true}
+- {"concept": "offer_negotiation", "title": "Wikipedia: Offer and salary negotiation", "url": "https://en.wikipedia.org/wiki/Employment_contract", "lang": "en", "type": "article", "verified": true}
+- {"concept": "orm_basics", "title": "Wikipedia: ORM basics", "url": "https://en.wikipedia.org/wiki/Object-relational_mapping", "lang": "en", "type": "article", "verified": true}
+- {"concept": "package_build_tools", "title": "Vite guide", "url": "https://vite.dev/guide/", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "package_build_tools", "title": "Wikipedia: Package managers and build tools", "url": "https://en.wikipedia.org/wiki/Npm_(software)", "lang": "en", "type": "article", "verified": true}
+- {"concept": "paid_advertising", "title": "Google Ads help", "url": "https://support.google.com/google-ads", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "paid_advertising", "title": "Wikipedia: Paid advertising", "url": "https://en.wikipedia.org/wiki/Pay-per-click", "lang": "en", "type": "article", "verified": true}
+- {"concept": "pandas", "title": "pandas: 10 minutes to pandas", "url": "https://pandas.pydata.org/docs/user_guide/10min.html", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "pandas", "title": "NumPy absolute beginners guide", "url": "https://numpy.org/doc/stable/user/absolute_beginners.html", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "pandas", "title": "Wikipedia: Pandas and NumPy", "url": "https://en.wikipedia.org/wiki/Pandas_(software)", "lang": "en", "type": "article", "verified": true}
+- {"concept": "pivot_tables", "title": "Create a PivotTable (Microsoft)", "url": "https://support.microsoft.com/en-us/office/create-a-pivottable-to-analyze-worksheet-data-a9a84538-bfe9-40a9-a8e9-f99134456576", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "pivot_tables", "title": "Wikipedia: Pivot tables", "url": "https://en.wikipedia.org/wiki/Pivot_table", "lang": "en", "type": "article", "verified": true}
+- {"concept": "platform_engineering", "title": "Platform engineering community", "url": "https://platformengineering.org/blog", "lang": "en", "type": "article", "verified": true}
+- {"concept": "platform_engineering", "title": "Wikipedia: Platform engineering", "url": "https://en.wikipedia.org/wiki/Platform_engineering", "lang": "en", "type": "article", "verified": true}
+- {"concept": "portfolio_theory", "title": "Wikipedia: Portfolio theory", "url": "https://en.wikipedia.org/wiki/Modern_portfolio_theory", "lang": "en", "type": "article", "verified": true}
+- {"concept": "presentation_skills", "title": "Wikipedia: Presentation skills", "url": "https://en.wikipedia.org/wiki/Presentation", "lang": "en", "type": "article", "verified": true}
+- {"concept": "pricing_monetization", "title": "Wikipedia: Pricing and monetization", "url": "https://en.wikipedia.org/wiki/Pricing", "lang": "en", "type": "article", "verified": true}
+- {"concept": "prioritization_frameworks", "title": "Wikipedia: Prioritization frameworks", "url": "https://en.wikipedia.org/wiki/MoSCoW_method", "lang": "en", "type": "article", "verified": true}
+- {"concept": "probability_basics", "title": "ویکی‌پدیا: مبانی احتمال", "url": "https://fa.wikipedia.org/wiki/%D8%A7%D8%AD%D8%AA%D9%85%D8%A7%D9%84", "lang": "fa", "type": "article", "verified": true}
+- {"concept": "probability_basics", "title": "Khan Academy: Probability", "url": "https://www.khanacademy.org/math/statistics-probability/probability-library", "lang": "en", "type": "course", "verified": true}
+- {"concept": "probability_basics", "title": "Wikipedia: Probability basics", "url": "https://en.wikipedia.org/wiki/Probability", "lang": "en", "type": "article", "verified": true}
+- {"concept": "product_analytics", "title": "Mixpanel documentation", "url": "https://docs.mixpanel.com/", "lang": "en", "type": "docs", "verified": false}
+- {"concept": "product_analytics", "title": "Amplitude Academy", "url": "https://academy.amplitude.com/", "lang": "en", "type": "course", "verified": false}
+- {"concept": "product_analytics", "title": "Wikipedia: Product analytics", "url": "https://en.wikipedia.org/wiki/Product_analytics", "lang": "en", "type": "article", "verified": false}
+- {"concept": "product_analytics", "title": "Wikipedia: Product analytics", "url": "https://en.wikipedia.org/wiki/Web_analytics", "lang": "en", "type": "article", "verified": true}
+- {"concept": "product_requirements", "title": "roadmap.sh Product Manager", "url": "https://roadmap.sh/product-manager", "lang": "en", "type": "article", "verified": true}
+- {"concept": "product_requirements", "title": "Wikipedia: Product requirements", "url": "https://en.wikipedia.org/wiki/Product_requirements_document", "lang": "en", "type": "article", "verified": true}
+- {"concept": "product_roadmapping", "title": "Wikipedia: Product roadmapping", "url": "https://en.wikipedia.org/wiki/Product_management", "lang": "en", "type": "article", "verified": true}
+- {"concept": "product_strategy", "title": "roadmap.sh Product Manager", "url": "https://roadmap.sh/product-manager", "lang": "en", "type": "article", "verified": true}
+- {"concept": "product_strategy", "title": "Wikipedia: Product strategy", "url": "https://en.wikipedia.org/wiki/Product_management", "lang": "en", "type": "article", "verified": true}
+- {"concept": "programming_fundamentals", "title": "freeCodeCamp curriculum", "url": "https://www.freecodecamp.org/learn/", "lang": "en", "type": "course", "verified": true}
+- {"concept": "programming_fundamentals", "title": "Wikipedia: Programming fundamentals", "url": "https://en.wikipedia.org/wiki/Computer_programming", "lang": "en", "type": "article", "verified": true}
+- {"concept": "project_management_basics", "title": "ویکی‌پدیا: مبانی مدیریت پروژه", "url": "https://fa.wikipedia.org/wiki/%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA_%D9%BE%D8%B1%D9%88%DA%98%D9%87", "lang": "fa", "type": "article", "verified": true}
+- {"concept": "project_management_basics", "title": "Atlassian: project management", "url": "https://www.atlassian.com/agile/project-management", "lang": "en", "type": "article", "verified": true}
+- {"concept": "project_management_basics", "title": "Wikipedia: Project management basics", "url": "https://en.wikipedia.org/wiki/Project_management", "lang": "en", "type": "article", "verified": true}
+- {"concept": "python_basics", "title": "ویکی‌پدیا: پایتون", "url": "https://fa.wikipedia.org/wiki/%D9%BE%D8%A7%DB%8C%D8%AA%D9%88%D9%86", "lang": "fa", "type": "article", "verified": true}
+- {"concept": "python_basics", "title": "roadmap.sh Python roadmap", "url": "https://roadmap.sh/python", "lang": "en", "type": "article", "verified": true}
+- {"concept": "python_basics", "title": "Wikipedia: Python", "url": "https://en.wikipedia.org/wiki/Python_(programming_language)", "lang": "en", "type": "article", "verified": true}
+- {"concept": "python_oop", "title": "ویکی‌پدیا: برنامه‌نویسی شیءگرا", "url": "https://fa.wikipedia.org/wiki/%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%E2%80%8C%D9%86%D9%88%DB%8C%D8%B3%DB%8C_%D8%B4%DB%8C%E2%80%8C%DA%AF%D8%B1%D8%A7", "lang": "fa", "type": "article", "verified": true}
+- {"concept": "python_oop", "title": "Wikipedia: Object-oriented programming", "url": "https://en.wikipedia.org/wiki/Object-oriented_programming", "lang": "en", "type": "article", "verified": true}
+- {"concept": "ratio_analysis", "title": "Wikipedia: Financial ratio analysis", "url": "https://en.wikipedia.org/wiki/Financial_ratio", "lang": "en", "type": "article", "verified": true}
+- {"concept": "recruitment_metrics", "title": "Wikipedia: Recruitment metrics", "url": "https://en.wikipedia.org/wiki/Recruitment", "lang": "en", "type": "article", "verified": true}
+- {"concept": "regression_analysis", "title": "Wikipedia: Regression analysis", "url": "https://en.wikipedia.org/wiki/Regression_analysis", "lang": "en", "type": "article", "verified": true}
+- {"concept": "relational_db", "title": "ویکی‌پدیا: مفاهیم پایگاه داده رابطه‌ای", "url": "https://fa.wikipedia.org/wiki/%D9%BE%D8%A7%DB%8C%DA%AF%D8%A7%D9%87_%D8%AF%D8%A7%D8%AF%D9%87", "lang": "fa", "type": "article", "verified": true}
+- {"concept": "relational_db", "title": "Wikipedia: Relational database concepts", "url": "https://en.wikipedia.org/wiki/Relational_database", "lang": "en", "type": "article", "verified": true}
+- {"concept": "responsive_design", "title": "web.dev Learn Design", "url": "https://web.dev/learn/design", "lang": "en", "type": "course", "verified": true}
+- {"concept": "responsive_design", "title": "Wikipedia: Responsive design", "url": "https://en.wikipedia.org/wiki/Responsive_web_design", "lang": "en", "type": "article", "verified": true}
+- {"concept": "rest_api", "title": "roadmap.sh API design", "url": "https://roadmap.sh/api-design", "lang": "en", "type": "article", "verified": true}
+- {"concept": "rest_api", "title": "Wikipedia: REST API design", "url": "https://en.wikipedia.org/wiki/REST", "lang": "en", "type": "article", "verified": true}
+- {"concept": "resume_screening", "title": "Wikipedia: Resume screening", "url": "https://en.wikipedia.org/wiki/R%C3%A9sum%C3%A9", "lang": "en", "type": "article", "verified": true}
+- {"concept": "risk_management", "title": "ویکی‌پدیا: مدیریت ریسک", "url": "https://fa.wikipedia.org/wiki/%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA_%D8%B1%DB%8C%D8%B3%DA%A9", "lang": "fa", "type": "article", "verified": true}
+- {"concept": "risk_management", "title": "Wikipedia: Risk management", "url": "https://en.wikipedia.org/wiki/Risk_management", "lang": "en", "type": "article", "verified": true}
+- {"concept": "seo", "title": "ویکی‌پدیا: بهینه‌سازی موتور جستجو (سئو)", "url": "https://fa.wikipedia.org/wiki/%D8%A8%D9%87%DB%8C%D9%86%D9%87%E2%80%8C%D8%B3%D8%A7%D8%B2%DB%8C_%D9%85%D9%88%D8%AA%D9%88%D8%B1_%D8%AC%D8%B3%D8%AA%D8%AC%D9%88", "lang": "fa", "type": "article", "verified": true}
+- {"concept": "seo", "title": "Google SEO starter guide", "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "seo", "title": "Moz: Beginner's guide to SEO", "url": "https://moz.com/beginners-guide-to-seo", "lang": "en", "type": "article", "verified": true}
+- {"concept": "seo", "title": "Wikipedia: Search engine optimization", "url": "https://en.wikipedia.org/wiki/Search_engine_optimization", "lang": "en", "type": "article", "verified": true}
+- {"concept": "server_side_rendering", "title": "Next.js Learn", "url": "https://nextjs.org/learn", "lang": "en", "type": "course", "verified": true}
+- {"concept": "server_side_rendering", "title": "Wikipedia: Server-side rendering", "url": "https://en.wikipedia.org/wiki/Server-side_scripting", "lang": "en", "type": "article", "verified": true}
+- {"concept": "shell_scripting", "title": "GNU Bash manual", "url": "https://www.gnu.org/software/bash/manual/bash.html", "lang": "en", "type": "docs", "verified": false}
+- {"concept": "shell_scripting", "title": "Wikipedia: Shell scripting", "url": "https://en.wikipedia.org/wiki/Shell_script", "lang": "en", "type": "article", "verified": true}
+- {"concept": "site_reliability", "title": "Google SRE books", "url": "https://sre.google/books/", "lang": "en", "type": "article", "verified": true}
+- {"concept": "site_reliability", "title": "Wikipedia: Site reliability engineering", "url": "https://en.wikipedia.org/wiki/Site_reliability_engineering", "lang": "en", "type": "article", "verified": true}
+- {"concept": "social_media_marketing", "title": "HubSpot Academy: Social media marketing", "url": "https://academy.hubspot.com/courses/social-media", "lang": "en", "type": "course", "verified": true}
+- {"concept": "social_media_marketing", "title": "Wikipedia: Social media marketing", "url": "https://en.wikipedia.org/wiki/Social_media_marketing", "lang": "en", "type": "article", "verified": true}
+- {"concept": "software_dev_lifecycle", "title": "Wikipedia: Software development lifecycle", "url": "https://en.wikipedia.org/wiki/Systems_development_life_cycle", "lang": "en", "type": "article", "verified": true}
+- {"concept": "sourcing_candidates", "title": "Wikipedia: Candidate sourcing", "url": "https://en.wikipedia.org/wiki/Recruitment", "lang": "en", "type": "article", "verified": true}
+- {"concept": "excel", "title": "ویکی‌پدیا: صفحه‌گسترده (اکسل)", "url": "https://fa.wikipedia.org/wiki/%D9%85%D8%A7%DB%8C%DA%A9%D8%B1%D9%88%D8%B3%D8%A7%D9%81%D8%AA_%D8%A7%DA%A9%D8%B3%D9%84", "lang": "fa", "type": "article", "verified": true}
+- {"concept": "excel", "title": "Microsoft Excel help and learning", "url": "https://support.microsoft.com/en-us/excel", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "excel", "title": "Exceljet", "url": "https://exceljet.net/", "lang": "en", "type": "article", "verified": true}
+- {"concept": "excel", "title": "Wikipedia: Spreadsheets (Excel)", "url": "https://en.wikipedia.org/wiki/Spreadsheet", "lang": "en", "type": "article", "verified": true}
+- {"concept": "sql_basics", "title": "ویکی‌پدیا: مبانی SQL", "url": "https://fa.wikipedia.org/wiki/SQL", "lang": "fa", "type": "article", "verified": true}
+- {"concept": "sql_basics", "title": "PostgreSQL tutorial", "url": "https://www.postgresql.org/docs/current/tutorial.html", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "sql_basics", "title": "roadmap.sh SQL", "url": "https://roadmap.sh/sql", "lang": "en", "type": "article", "verified": true}
+- {"concept": "sql_basics", "title": "W3Schools SQL tutorial", "url": "https://www.w3schools.com/sql/", "lang": "en", "type": "course", "verified": true}
+- {"concept": "sql_basics", "title": "Wikipedia: SQL basics", "url": "https://en.wikipedia.org/wiki/SQL", "lang": "en", "type": "article", "verified": true}
+- {"concept": "stakeholder_communication", "title": "Wikipedia: Stakeholder communication", "url": "https://en.wikipedia.org/wiki/Stakeholder_management", "lang": "en", "type": "article", "verified": true}
+- {"concept": "state_management", "title": "Redux essentials", "url": "https://redux.js.org/tutorials/essentials/part-1-overview-concepts", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "state_management", "title": "Wikipedia: State management", "url": "https://en.wikipedia.org/wiki/Redux_(JavaScript_library)", "lang": "en", "type": "article", "verified": true}
+- {"concept": "stream_processing", "title": "Apache Kafka introduction", "url": "https://kafka.apache.org/intro", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "stream_processing", "title": "Wikipedia: Stream processing", "url": "https://en.wikipedia.org/wiki/Stream_processing", "lang": "en", "type": "article", "verified": true}
+- {"concept": "supervised_learning", "title": "scikit-learn: supervised learning", "url": "https://scikit-learn.org/stable/supervised_learning.html", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "supervised_learning", "title": "Wikipedia: Supervised learning", "url": "https://en.wikipedia.org/wiki/Supervised_learning", "lang": "en", "type": "article", "verified": true}
+- {"concept": "system_design", "title": "System Design Primer", "url": "https://github.com/donnemartin/system-design-primer", "lang": "en", "type": "article", "verified": true}
+- {"concept": "system_design", "title": "roadmap.sh System Design", "url": "https://roadmap.sh/system-design", "lang": "en", "type": "article", "verified": true}
+- {"concept": "system_design", "title": "Wikipedia: System design", "url": "https://en.wikipedia.org/wiki/Systems_design", "lang": "en", "type": "article", "verified": true}
+- {"concept": "talent_pipeline_strategy", "title": "Wikipedia: Talent pipeline strategy", "url": "https://en.wikipedia.org/wiki/Workforce_planning", "lang": "en", "type": "article", "verified": true}
+- {"concept": "teamwork_agile", "title": "ویکی‌پدیا: کار تیمی و روش چابک", "url": "https://fa.wikipedia.org/wiki/%D8%AA%D9%88%D8%B3%D8%B9%D9%87_%DA%86%D8%A7%D8%A8%DA%A9_%D9%86%D8%B1%D9%85%E2%80%8C%D8%A7%D9%81%D8%B2%D8%A7%D8%B1", "lang": "fa", "type": "article", "verified": false}
+- {"concept": "teamwork_agile", "title": "Atlassian Agile Coach", "url": "https://www.atlassian.com/agile", "lang": "en", "type": "article", "verified": true}
+- {"concept": "teamwork_agile", "title": "The Scrum Guide", "url": "https://scrumguides.org/scrum-guide.html", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "teamwork_agile", "title": "Wikipedia: Teamwork and Agile", "url": "https://en.wikipedia.org/wiki/Agile_software_development", "lang": "en", "type": "article", "verified": true}
+- {"concept": "technical_recruiting", "title": "Wikipedia: Technical recruiting", "url": "https://en.wikipedia.org/wiki/Recruitment", "lang": "en", "type": "article", "verified": true}
+- {"concept": "technical_seo", "title": "Google Search crawling and indexing", "url": "https://developers.google.com/search/docs/crawling-indexing", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "technical_seo", "title": "Wikipedia: Technical SEO", "url": "https://en.wikipedia.org/wiki/Search_engine_optimization", "lang": "en", "type": "article", "verified": true}
+- {"concept": "testing_basics", "title": "ویکی‌پدیا: تست نرم‌افزار", "url": "https://fa.wikipedia.org/wiki/%D8%A2%D8%B2%D9%85%D8%A7%DB%8C%D8%B4_%D9%86%D8%B1%D9%85%E2%80%8C%D8%A7%D9%81%D8%B2%D8%A7%D8%B1", "lang": "fa", "type": "article", "verified": false}
+- {"concept": "testing_basics", "title": "pytest getting started", "url": "https://docs.pytest.org/en/stable/getting-started.html", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "testing_basics", "title": "Wikipedia: Software testing", "url": "https://en.wikipedia.org/wiki/Software_testing", "lang": "en", "type": "article", "verified": true}
+- {"concept": "time_series", "title": "Forecasting: Principles and Practice", "url": "https://otexts.com/fpp3/", "lang": "en", "type": "article", "verified": false}
+- {"concept": "time_series", "title": "Wikipedia: Time series analysis", "url": "https://en.wikipedia.org/wiki/Time_series", "lang": "en", "type": "article", "verified": true}
+- {"concept": "time_value_of_money", "title": "ویکی‌پدیا: ارزش زمانی پول", "url": "https://fa.wikipedia.org/wiki/%D8%A7%D8%B1%D8%B2%D8%B4_%D8%B2%D9%85%D8%A7%D9%86%DB%8C_%D9%BE%D9%88%D9%84", "lang": "fa", "type": "article", "verified": true}
+- {"concept": "time_value_of_money", "title": "Khan Academy: Interest and debt", "url": "https://www.khanacademy.org/economics-finance-domain/core-finance/interest-tutorial", "lang": "en", "type": "course", "verified": true}
+- {"concept": "time_value_of_money", "title": "Wikipedia: Time value of money", "url": "https://en.wikipedia.org/wiki/Time_value_of_money", "lang": "en", "type": "article", "verified": true}
+- {"concept": "typescript", "title": "TypeScript handbook", "url": "https://www.typescriptlang.org/docs/handbook/intro.html", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "typescript", "title": "Wikipedia: TypeScript", "url": "https://en.wikipedia.org/wiki/TypeScript", "lang": "en", "type": "article", "verified": true}
+- {"concept": "ui_ux_basics", "title": "ویکی‌پدیا: مبانی طراحی UI/UX", "url": "https://fa.wikipedia.org/wiki/%D8%B7%D8%B1%D8%A7%D8%AD%DB%8C_%D8%AA%D8%AC%D8%B1%D8%A8%D9%87_%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%DB%8C", "lang": "fa", "type": "article", "verified": true}
+- {"concept": "ui_ux_basics", "title": "roadmap.sh UX Design", "url": "https://roadmap.sh/ux-design", "lang": "en", "type": "article", "verified": true}
+- {"concept": "ui_ux_basics", "title": "Wikipedia: UI/UX design basics", "url": "https://en.wikipedia.org/wiki/User_experience_design", "lang": "en", "type": "article", "verified": true}
+- {"concept": "unsupervised_learning", "title": "scikit-learn: unsupervised learning", "url": "https://scikit-learn.org/stable/unsupervised_learning.html", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "unsupervised_learning", "title": "Wikipedia: Unsupervised learning", "url": "https://en.wikipedia.org/wiki/Unsupervised_learning", "lang": "en", "type": "article", "verified": true}
+- {"concept": "user_research", "title": "Wikipedia: User research", "url": "https://en.wikipedia.org/wiki/User_research", "lang": "en", "type": "article", "verified": true}
+- {"concept": "valuation", "title": "CFI: Valuation", "url": "https://corporatefinanceinstitute.com/resources/valuation/valuation-methods/", "lang": "en", "type": "article", "verified": true}
+- {"concept": "valuation", "title": "Wikipedia: Valuation", "url": "https://en.wikipedia.org/wiki/Valuation_(finance)", "lang": "en", "type": "article", "verified": true}
+- {"concept": "web_accessibility", "title": "web.dev Learn Accessibility", "url": "https://web.dev/learn/accessibility", "lang": "en", "type": "course", "verified": true}
+- {"concept": "web_accessibility", "title": "Wikipedia: Web accessibility", "url": "https://en.wikipedia.org/wiki/Web_accessibility", "lang": "en", "type": "article", "verified": true}
+- {"concept": "web_analytics", "title": "Google Analytics help", "url": "https://support.google.com/analytics", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "web_analytics", "title": "Wikipedia: Web analytics", "url": "https://en.wikipedia.org/wiki/Web_analytics", "lang": "en", "type": "article", "verified": true}
+- {"concept": "web_performance", "title": "web.dev Learn Performance", "url": "https://web.dev/learn/performance", "lang": "en", "type": "course", "verified": true}
+- {"concept": "web_performance", "title": "Wikipedia: Web performance", "url": "https://en.wikipedia.org/wiki/Web_performance", "lang": "en", "type": "article", "verified": true}
+- {"concept": "web_security_basics", "title": "OWASP Top Ten", "url": "https://owasp.org/www-project-top-ten/", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "web_security_basics", "title": "Wikipedia: Web security basics", "url": "https://en.wikipedia.org/wiki/Web_application_security", "lang": "en", "type": "article", "verified": true}
+- {"concept": "web_servers_proxies", "title": "nginx beginner's guide", "url": "https://nginx.org/en/docs/beginners_guide.html", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "web_servers_proxies", "title": "Wikipedia: Web servers and proxies", "url": "https://en.wikipedia.org/wiki/Reverse_proxy", "lang": "en", "type": "article", "verified": true}
+- {"concept": "workflow_orchestration", "title": "Apache Airflow tutorial", "url": "https://airflow.apache.org/docs/apache-airflow/stable/tutorial/index.html", "lang": "en", "type": "docs", "verified": true}
+- {"concept": "workflow_orchestration", "title": "Wikipedia: Workflow orchestration", "url": "https://en.wikipedia.org/wiki/Apache_Airflow", "lang": "en", "type": "article", "verified": true}
