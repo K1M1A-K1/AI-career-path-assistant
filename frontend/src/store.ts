@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import {
-  correctRoadmap, getRoadmap, getUsage, JOB_TIMEOUT_MS, matchJobs, sendChat, uploadResume, withTimeout,
+  correctRoadmap, EXTRA_MATCH_TIMEOUT_MS, getRoadmap, getUsage, JOB_TIMEOUT_MS, matchJobs, sendChat, UPLOAD_TIMEOUT_MS, uploadResume, withTimeout,
 } from "./api";
 import type { CareerProfile, JobMatch, Level, ResumeProfile, Roadmap, UsageReport } from "./types";
 import { validateCareerProfile } from "./lib/validators";
@@ -279,16 +279,21 @@ export const useAppStore = create<AppState>((set, get) => {
         return;
       }
       set({ jobBusy: true, jobError: null, jobStage: 1, resume: null, pool: [], filters: DEFAULT_FILTERS });
-      const t = withTimeout(JOB_TIMEOUT_MS);
+      // separate budgets: a slow upload must not eat the match calls' time (and vice versa)
+      const run = async <T,>(ms: number, fn: (signal: AbortSignal) => Promise<T>): Promise<T> => {
+        const t = withTimeout(ms);
+        try { return await fn(t.signal); } finally { t.clear(); }
+      };
       try {
-        const resume = await uploadResume(file, t.signal);
+        const resume = await run(UPLOAD_TIMEOUT_MS, (sig) => uploadResume(file, sig));
         set({ resume, jobStage: 2 });
-        const top = await matchJobs({ method: "hybrid", filters: {} }, t.signal);
+        const top = await run(JOB_TIMEOUT_MS, (sig) => matchJobs({ method: "hybrid", filters: {} }, sig));
         set({ pool: top, jobStage: 3 });
-        // widen the pool so Junior/Mid stretch analysis has data (backend returns max 10 per call)
+        // widen the pool so Junior/Mid stretch analysis has data (backend returns max 10 per call);
+        // failures here keep the first results on screen
         const extra = await Promise.allSettled([
-          matchJobs({ method: "hybrid", filters: { seniority: "junior" } }, t.signal),
-          matchJobs({ method: "hybrid", filters: { seniority: "mid" } }, t.signal),
+          run(EXTRA_MATCH_TIMEOUT_MS, (sig) => matchJobs({ method: "hybrid", filters: { seniority: "junior" } }, sig)),
+          run(EXTRA_MATCH_TIMEOUT_MS, (sig) => matchJobs({ method: "hybrid", filters: { seniority: "mid" } }, sig)),
         ]);
         const merged = new Map(top.map((m) => [m.posting.id, m]));
         for (const r of extra) if (r.status === "fulfilled") r.value.forEach((m) => merged.set(m.posting.id, m));
@@ -296,7 +301,6 @@ export const useAppStore = create<AppState>((set, get) => {
       } catch (e) {
         set({ jobError: errMsg(e) });
       } finally {
-        t.clear();
         set({ jobBusy: false });
         void get().refreshUsage();
       }

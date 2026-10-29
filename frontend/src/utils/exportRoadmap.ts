@@ -1,4 +1,3 @@
-import { toPng } from "html-to-image";
 import { getNodesBounds, getViewportForBounds, type Node } from "@xyflow/react";
 
 const W = 1600;
@@ -17,6 +16,7 @@ export async function exportRoadmap(root: HTMLElement | null, nodes: Node[], for
 
   root.setAttribute("data-exporting", "true");
   try {
+    const { toPng } = await import("html-to-image"); // lazy: keeps export libs out of the main bundle
     const dataUrl = await toPng(viewportEl, {
       backgroundColor: "#f8fafc",
       width: W,

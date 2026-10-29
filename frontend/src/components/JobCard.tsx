@@ -1,7 +1,7 @@
 import { ExternalLink, MapPin, Compass } from "lucide-react";
 import type { JobMatch } from "../types";
 import { scorePercent } from "../lib/validators";
-import { LEVEL_LABEL } from "../lib/taxonomy";
+import { LEVEL_LABEL, conceptLabelFa } from "../lib/taxonomy";
 
 interface Props {
   match: JobMatch;
@@ -50,13 +50,13 @@ export default function JobCard({ match, rank, stretch, onRoadmap }: Props) {
         <div className="rounded-xl border border-emerald-200/70 bg-emerald-50/50 p-2.5">
           <span className="mb-1.5 block text-[11px] font-bold text-emerald-900">✓ مهارت‌های منطبق شما ({fa(match.matched_skills.length)})</span>
           <div className="flex flex-wrap gap-1.5">
-            {match.matched_skills.length ? match.matched_skills.map((s) => <bdi key={s} className="rounded-md border border-emerald-300 bg-white px-2 py-0.5 text-xs font-medium text-emerald-800">{s}</bdi>) : <span className="text-xs text-slate-400">موردی یافت نشد</span>}
+            {match.matched_skills.length ? match.matched_skills.map((s) => <bdi key={s} title={s} className="rounded-md border border-emerald-300 bg-white px-2 py-0.5 text-xs font-medium text-emerald-800">{conceptLabelFa(s)}</bdi>) : <span className="text-xs text-slate-400">موردی یافت نشد</span>}
           </div>
         </div>
         <div className="rounded-xl border border-rose-200/70 bg-rose-50/50 p-2.5">
           <span className="mb-1.5 block text-[11px] font-bold text-rose-900">! مهارت‌های کسری برای این شغل ({fa(match.missing_skills.length)})</span>
           <div className="flex flex-wrap gap-1.5">
-            {match.missing_skills.length ? match.missing_skills.map((s) => <bdi key={s} className="rounded-md border border-rose-300 bg-white px-2 py-0.5 text-xs font-medium text-rose-800">{s}</bdi>) : <span className="text-xs font-medium text-emerald-700">تمام مهارت‌های اصلی را دارید!</span>}
+            {match.missing_skills.length ? match.missing_skills.map((s) => <bdi key={s} title={s} className="rounded-md border border-rose-300 bg-white px-2 py-0.5 text-xs font-medium text-rose-800">{conceptLabelFa(s)}</bdi>) : <span className="text-xs font-medium text-emerald-700">تمام مهارت‌های اصلی را دارید!</span>}
           </div>
         </div>
       </div>

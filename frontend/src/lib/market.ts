@@ -89,13 +89,25 @@ export interface JobFilters {
 }
 export const DEFAULT_FILTERS: JobFilters = { location: "", seniority: "all", remoteOnly: false, includeStretch: false };
 
+const CITY_ALIASES: Record<string, string> = {
+  tehran: "تهران", isfahan: "اصفهان", esfahan: "اصفهان", shiraz: "شیراز", mashhad: "مشهد", tabriz: "تبریز",
+  karaj: "کرج", qom: "قم", ahvaz: "اهواز", rasht: "رشت", kermanshah: "کرمانشاه", urmia: "ارومیه",
+  yazd: "یزد", kish: "کیش", kerman: "کرمان", hamedan: "همدان", arak: "اراک",
+};
+
+/** Lowercase, unify Arabic ي/ك to Persian ی/ک and map English city names to Persian. */
+export function normalizeLocation(text: string): string {
+  const t = text.trim().toLowerCase().replace(/ي/g, "ی").replace(/ك/g, "ک");
+  return CITY_ALIASES[t] ?? t;
+}
+
 /** Pure client-side filter (B-08). Sorted by score; stretch Mid jobs ride along for Junior when enabled. */
 export function filterJobs(pool: JobMatch[], f: JobFilters, resume: ResumeProfile | null): JobMatch[] {
-  const loc = f.location.trim().toLowerCase();
+  const loc = normalizeLocation(f.location);
   return pool
     .filter((m) => {
       const p = m.posting;
-      if (loc && !p.location.toLowerCase().includes(loc)) return false;
+      if (loc && !normalizeLocation(p.location).includes(loc) && !p.location.toLowerCase().includes(f.location.trim().toLowerCase())) return false;
       if (f.remoteOnly && !p.remote) return false;
       if (f.seniority === "all" || p.seniority === f.seniority) return true;
       return f.seniority === "junior" && f.includeStretch && isStretch(m, resume);

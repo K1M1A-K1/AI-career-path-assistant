@@ -7,7 +7,9 @@ import fxResume from "./fixtures/resume_profile.json";
 import fxJobs from "./fixtures/job_matches.json";
 
 export const CHAT_TIMEOUT_MS = 9200; // NF-02: leaves ~800 ms render buffer inside 10 s
-export const JOB_TIMEOUT_MS = 55000; // NF-02: inside the 60 s job-matching SLA
+export const UPLOAD_TIMEOUT_MS = 30000; // resume parsing (LLM extraction)
+export const JOB_TIMEOUT_MS = 55000; // first match: NF-02, inside the 60 s job-matching SLA
+export const EXTRA_MATCH_TIMEOUT_MS = 20000; // junior / mid pool widening (best effort)
 export const TIMEOUT_MSG = "پاسخ سرور بیش از حد طول کشید. لطفاً دوباره تلاش کنید.";
 const USE_FIXTURES = import.meta.env.VITE_USE_FIXTURES === "1";
 

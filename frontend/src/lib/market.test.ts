@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { JobMatch, ResumeProfile } from "../types";
-import { DEFAULT_FILTERS, bestRoleForJob, computeStretchJobs, filterJobs, jobsUnlockedBy, missingIds, rankUnlockSkills, summarizeMarket, unlockIds } from "./market";
+import { DEFAULT_FILTERS, normalizeLocation, bestRoleForJob, computeStretchJobs, filterJobs, jobsUnlockedBy, missingIds, rankUnlockSkills, summarizeMarket, unlockIds } from "./market";
 
 const resume: ResumeProfile = {
   skills: ["Python", "SQL", "Git"], skill_ids: ["python_basics", "sql_basics", "git_basics"],
@@ -51,6 +51,12 @@ describe("filterJobs (B-08)", () => {
     expect(filterJobs(pool, { ...DEFAULT_FILTERS, remoteOnly: true }, resume).map((m) => m.posting.id)).toEqual(["m2"]);
     expect(filterJobs(pool, { ...DEFAULT_FILTERS, location: "teh" }, resume).map((m) => m.posting.id)).toEqual(["j1", "m1", "m3", "s1"]);
     expect(filterJobs(pool, { ...DEFAULT_FILTERS, seniority: "junior" }, resume).map((m) => m.posting.id)).toEqual(["j1"]);
+  });
+  it("matches English city names against Persian locations and Arabic letters", () => {
+    const fa = [job("p1", "junior", ["python_basics"], { location: "تهران، ونک" }), job("p2", "junior", ["python_basics"], { location: "اصفهان" })];
+    expect(filterJobs(fa, { ...DEFAULT_FILTERS, location: "Tehran" }, resume).map((m) => m.posting.id)).toEqual(["p1"]);
+    expect(filterJobs(fa, { ...DEFAULT_FILTERS, location: "Esfahan" }, resume).map((m) => m.posting.id)).toEqual(["p2"]);
+    expect(normalizeLocation("كرج")).toBe("کرج");
   });
   it("includes reachable Mid jobs for Junior only when the smart toggle is on", () => {
     const on = filterJobs(pool, { ...DEFAULT_FILTERS, seniority: "junior", includeStretch: true }, resume).map((m) => m.posting.id);
