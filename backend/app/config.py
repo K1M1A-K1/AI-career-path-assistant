@@ -29,6 +29,9 @@ class Settings(BaseSettings):
     # Ranking weights (hybrid = skill overlap + embedding cosine, optional LLM re-rank)
     w_skill_overlap: float = 0.6
     w_embedding: float = 0.4
+    w_seniority: float = 0.1  # weights are renormalised over the signals that are available
+    skill_jaccard_blend: float = 0.2  # skill_score = (1 - blend) * coverage + blend * jaccard
+    embed_batch_size: int = 64
     llm_rerank: bool = False
     llm_rerank_top_k: int = 20
 
