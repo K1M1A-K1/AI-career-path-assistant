@@ -1,0 +1,11 @@
+# Format: id, label_fa, label_en, prerequisites (concept ids), aliases (free-text spellings)
+- {id: excel, label_fa: اکسل, label_en: Excel, prerequisites: [], aliases: [microsoft excel, spreadsheet]}
+- {id: statistics_basics, label_fa: آمار پایه, label_en: Statistics Basics, prerequisites: [], aliases: [statistics, آمار]}
+- {id: sql_basics, label_fa: مبانی SQL, label_en: SQL Basics, prerequisites: [], aliases: [sql, mysql, postgresql]}
+- {id: python_basics, label_fa: مبانی پایتون, label_en: Python Basics, prerequisites: [], aliases: [python, پایتون]}
+- {id: pandas, label_fa: پانداس, label_en: Pandas, prerequisites: [python_basics], aliases: [pandas, dataframe]}
+- {id: data_visualization, label_fa: مصورسازی داده, label_en: Data Visualization, prerequisites: [pandas, statistics_basics], aliases: [matplotlib, tableau, power bi]}
+- {id: git_basics, label_fa: مبانی گیت, label_en: Git Basics, prerequisites: [], aliases: [git, github]}
+- {id: http_basics, label_fa: مبانی HTTP, label_en: HTTP Basics, prerequisites: [], aliases: [http, https]}
+- {id: relational_db, label_fa: پایگاه داده رابطه‌ای, label_en: Relational Databases, prerequisites: [sql_basics], aliases: [rdbms, database design]}
+- {id: rest_api, label_fa: طراحی REST API, label_en: REST API Design, prerequisites: [http_basics, python_basics], aliases: [rest, restful, fastapi, flask]}

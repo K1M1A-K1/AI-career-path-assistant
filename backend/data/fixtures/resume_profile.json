@@ -1,0 +1,9 @@
+{
+  "skills": ["Python", "SQL", "Excel", "Git"],
+  "skill_ids": ["python_basics", "sql_basics", "excel", "git_basics"],
+  "years_experience": 1.5,
+  "education": ["کارشناسی مهندسی کامپیوتر"],
+  "previous_roles": ["کارآموز تحلیل داده"],
+  "location": "Tehran",
+  "level_guess": "junior"
+}

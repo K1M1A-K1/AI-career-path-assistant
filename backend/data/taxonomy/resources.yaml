@@ -1,0 +1,4 @@
+# Format: concept (id), title, url, lang (fa|en), type (course|article|video|docs|book), verified (set by scripts/verify_resources.py)
+- {concept: python_basics, title: The Python Tutorial, url: "https://docs.python.org/3/tutorial/", lang: en, type: docs, verified: false}
+- {concept: sql_basics, title: SQLBolt - Learn SQL, url: "https://sqlbolt.com/", lang: en, type: course, verified: false}
+- {concept: http_basics, title: MDN - An overview of HTTP, url: "https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview", lang: en, type: docs, verified: false}

@@ -1,0 +1,11 @@
+.env
+data/jobs/raw/
+backend/data/jobs/raw/*
+!backend/data/jobs/raw/.gitkeep
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+node_modules/
+dist/
+.DS_Store

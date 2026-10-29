@@ -1,0 +1,18 @@
+# levels: target concepts per level; cumulative (mid includes junior, senior includes mid).
+# TODO(P1): fill mid/senior and add >=10 roles across >=3 domains.
+- id: data_analyst
+  label_fa: تحلیلگر داده
+  label_en: Data Analyst
+  domain: data
+  levels:
+    junior: [excel, statistics_basics, sql_basics, python_basics, pandas, data_visualization]
+    mid: []
+    senior: []
+- id: backend_developer
+  label_fa: توسعه‌دهنده بک‌اند
+  label_en: Backend Developer
+  domain: software
+  levels:
+    junior: [python_basics, git_basics, http_basics, sql_basics, relational_db, rest_api]
+    mid: []
+    senior: []
